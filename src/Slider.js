@@ -87,6 +87,12 @@ export default class Slider extends PureComponent {
      * default blue gradient image.
      */
     minimumTrackTintColor: PropTypes.string,
+    
+    
+    /**
+     * The style used for the track to the left of the button.
+     */
+    minimumTrackStyle: PropTypes.style,
 
     /**
      * The color used for the track to the right of the button. Overrides the
@@ -262,6 +268,7 @@ export default class Slider extends PureComponent {
       position: 'absolute',
       width: Animated.add(minimumTrackWidth, thumbSize.width / 2),
       backgroundColor: minimumTrackTintColor,
+      ...props.minimumTrackStyle,
       ...valueVisibleStyle,
     };
 
